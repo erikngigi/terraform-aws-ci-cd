@@ -34,3 +34,9 @@ variable "hugo_s3_bucket_arn" {
   description = "ARN value of the hugo s3 bucket from storage module"
   type        = string
 }
+
+# Network details
+variable "cloudfront_distribution_arn" {
+  description = "Cloudfront Distribution ARN from the network module"
+  type        = string
+}

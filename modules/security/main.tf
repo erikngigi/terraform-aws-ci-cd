@@ -53,6 +53,15 @@ resource "aws_iam_role_policy" "github_actions" {
           var.hugo_s3_bucket_arn,
           "${var.hugo_s3_bucket_arn}/*"
         ]
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "cloudfront:CreateInvalidation",
+          "cloudfront:GetInvalidation",
+          "cloudfront:ListInvalidations"
+        ]
+        Resource = var.cloudfront_distribution_arn
       }
     ]
   })

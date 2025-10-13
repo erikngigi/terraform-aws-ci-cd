@@ -22,3 +22,17 @@ output "cloudflare_dns_records" {
   description = "Resource output of the dns records in the domain"
   value       = module.cloudflare.cloudflare_dns_records
 }
+
+output "cloudflare_hugo_url" {
+  value = "https://${module.cloudflare.cloudflare_hugo_url}"
+}
+
+output "cloudfront_distribution_id" {
+  description = "CloudFront distribution ID"
+  value       = module.network.cloudfront_distribution_id
+}
+
+output "cloudfront_url" {
+  description = "CloudFront distribution URL (HTTPS)"
+  value       = "https://${module.network.cloudfront_domain_name}"
+}
