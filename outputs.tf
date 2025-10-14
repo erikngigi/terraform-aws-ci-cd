@@ -27,10 +27,10 @@ output "s3_bucket_name" {
 #   value = "https://${module.cloudflare.cloudflare_hugo_url}"
 # }
 
-# output "cloudfront_distribution_id" {
-#   description = "CloudFront distribution ID"
-#   value       = module.network.cloudfront_distribution_id
-# }
+output "cloudfront_distribution_id" {
+  description = "CloudFront distribution ID"
+  value       = module.network.cloudfront_distribution_id
+}
 
 # output "cloudfront_url" {
 #   description = "CloudFront distribution URL (HTTPS)"
