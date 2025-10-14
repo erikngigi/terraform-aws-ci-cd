@@ -36,8 +36,3 @@ variable "git_oidc_url" {
   description = "GitHub actions OIDC url"
   type        = string
 }
-
-variable "oidc_thumbprint" {
-  description = "SHA1 thumbprint for GitHub OIDC provider SSL certificate"
-  type        = string
-}
