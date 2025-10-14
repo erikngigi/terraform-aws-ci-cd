@@ -8,31 +8,31 @@ output "s3_bucket_name" {
   value       = module.storage.s3_bucket_name
 }
 
-output "cloudflare_zone_names" {
-  description = "Filtered domain name for Cloudflare module"
-  value       = module.cloudflare.cloudflare_zones_name
-}
+# output "cloudflare_zone_names" {
+#   description = "Filtered domain name for Cloudflare module"
+#   value       = module.cloudflare.cloudflare_zones_name
+# }
 
-output "cloudflare_zone_id" {
-  description = "Resource output of the domain name zone id"
-  value       = module.cloudflare.cloudflare_zone_id
-}
+# output "cloudflare_zone_id" {
+#   description = "Resource output of the domain name zone id"
+#   value       = module.cloudflare.cloudflare_zone_id
+# }
 
-output "cloudflare_dns_records" {
-  description = "Resource output of the dns records in the domain"
-  value       = module.cloudflare.cloudflare_dns_records
-}
+# output "cloudflare_dns_records" {
+#   description = "Resource output of the dns records in the domain"
+#   value       = module.cloudflare.cloudflare_dns_records
+# }
 
-output "cloudflare_hugo_url" {
-  value = "https://${module.cloudflare.cloudflare_hugo_url}"
-}
+# output "cloudflare_hugo_url" {
+#   value = "https://${module.cloudflare.cloudflare_hugo_url}"
+# }
 
-output "cloudfront_distribution_id" {
-  description = "CloudFront distribution ID"
-  value       = module.network.cloudfront_distribution_id
-}
+# output "cloudfront_distribution_id" {
+#   description = "CloudFront distribution ID"
+#   value       = module.network.cloudfront_distribution_id
+# }
 
-output "cloudfront_url" {
-  description = "CloudFront distribution URL (HTTPS)"
-  value       = "https://${module.network.cloudfront_domain_name}"
-}
+# output "cloudfront_url" {
+#   description = "CloudFront distribution URL (HTTPS)"
+#   value       = "https://${module.network.cloudfront_domain_name}"
+# }

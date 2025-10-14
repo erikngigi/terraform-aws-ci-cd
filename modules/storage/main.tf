@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "hugo_site" {
-  bucket = "${var.project_name}-stack-theme-s3"
+  bucket        = "${var.project_name}-stack-theme-s3"
+  force_destroy = true
 
   tags = {
     Name = "Hugo Theme Stack Site"
