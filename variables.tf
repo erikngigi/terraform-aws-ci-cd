@@ -1,7 +1,12 @@
 # Main details
 # Project details
-variable "project_name" {
-  description = "Project name used for resource tagging"
+variable "hugo_name" {
+  description = "Name of the Hugo website for resource tagging"
+  type        = string
+}
+
+variable "startpage_name" {
+  description = "Name of the Startpage website for resource tagging"
   type        = string
 }
 
@@ -10,24 +15,29 @@ variable "github_org" {
   type        = string
 }
 
-variable "github_repo" {
-  description = "Github repository name"
+variable "github_hugo_repo" {
+  description = "Hugo GitHub repository name"
   type        = string
 }
 
-variable "git_oidc_thumbprint_list" {
-  description = "List of thumbprints for the GitHub OIDC provider"
-  type        = list(string)
+variable "github_startpage_repo" {
+  description = "Startpage GitHub repository name"
+  type        = string
 }
 
 # Cloudflare details
 variable "domain_name" {
-  description = "Domain name to use in filter options"
+  description = "Owned domain name"
   type        = string
 }
 
-variable "subdomain_name" {
-  description = "Subdomain for the Hugo website"
+variable "hugo_subdomain_name" {
+  description = "Hugo subdomain name"
+  type        = string
+}
+
+variable "startpage_subdomain_name" {
+  description = "Startpage subdomain name"
   type        = string
 }
 
@@ -35,4 +45,9 @@ variable "subdomain_name" {
 variable "git_oidc_url" {
   description = "GitHub actions OIDC url"
   type        = string
+}
+
+variable "git_oidc_thumbprint_list" {
+  description = "List of thumbprints for the GitHub OIDC provider"
+  type        = list(string)
 }

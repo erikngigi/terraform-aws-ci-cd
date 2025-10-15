@@ -3,9 +3,14 @@ output "github_action_role_arn" {
   value       = module.security.github_action_role_arn
 }
 
-output "s3_bucket_name" {
-  description = "Name of the s3 bucket"
-  value       = module.storage.s3_bucket_name
+output "hugo_bucket_id" {
+  description = "ID value of the Hugo S3 bucket"
+  value       = module.storage.hugo_bucket_id
+}
+
+output "startpage_bucket_id" {
+  description = "ID value of the Startpage S3 bucket"
+  value       = module.storage.startpage_bucket_id
 }
 
 # output "cloudflare_zone_names" {
@@ -27,9 +32,14 @@ output "s3_bucket_name" {
 #   value = "https://${module.cloudflare.cloudflare_hugo_url}"
 # }
 
-output "cloudfront_distribution_id" {
-  description = "CloudFront distribution ID"
-  value       = module.network.cloudfront_distribution_id
+output "hugo_cloudfront_dist_id" {
+  description = "ID value of the Hugo Cloudfront Distribution"
+  value       = module.network.hugo_cloudfront_dist_id
+}
+
+output "startpage_cloudfront_dist_id" {
+  description = "ID value of the Startpage Cloudfront Distribution"
+  value       = module.network.startpage_cloudfront_dist_id
 }
 
 # output "cloudfront_url" {

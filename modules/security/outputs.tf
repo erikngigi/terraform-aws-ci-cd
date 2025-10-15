@@ -1,4 +1,4 @@
 output "github_action_role_arn" {
-  description = "ARN of the IAM role for GitHub Actions"
+  description = "ARN value of the IAM role for GitHub Actions"
   value       = aws_iam_role.github_actions.arn
 }

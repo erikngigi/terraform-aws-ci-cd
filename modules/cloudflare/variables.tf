@@ -1,20 +1,49 @@
+variable "hugo_name" {
+  description = "Name of the Hugo website for resource tagging"
+  type        = string
+}
+
+variable "startpage_name" {
+  description = "Name of the Startpage website for resource tagging"
+  type        = string
+}
+
 variable "domain_name" {
   description = "Domain name to use in filter options"
   type        = string
 }
 
-variable "subdomain_name" {
-  description = "Subdomain name to apply to cloudfront url"
+variable "hugo_subdomain_name" {
+  description = "Hugo subdomain name"
   type        = string
 }
 
-variable "cloudfront_url" {
-  description = "Generated website url from cloudfront network module"
+variable "startpage_subdomain_name" {
+  description = "Startpage subdomain name"
   type        = string
 }
 
-variable "acm_validation_options" {
-  description = "ACM certificate validation options from network module"
+variable "hugo_cloudfront_domain_name" {
+  description = "Name value of the Hugo cloudfront distribution"
+  type        = string
+}
+
+variable "startpage_cloudfront_domain_name" {
+  description = "Name value of the Startpage cloudfront distribution"
+  type        = string
+}
+
+variable "hugo_acm_validation_options" {
+  description = "ACM certificate validation DNS records for Hugo"
+  type = list(object({
+    name  = string
+    type  = string
+    value = string
+  }))
+}
+
+variable "startpage_acm_validation_options" {
+  description = "ACM certificate validation DNS records for Startpage"
   type = list(object({
     name  = string
     type  = string

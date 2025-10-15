@@ -1,5 +1,10 @@
-variable "project_name" {
-  description = "Project name used for resource tagging"
+variable "hugo_name" {
+  description = "Name of the Hugo website for resource tagging"
+  type        = string
+}
+
+variable "startpage_name" {
+  description = "Name of the Startpage website for resource tagging"
   type        = string
 }
 
@@ -8,8 +13,24 @@ variable "github_org" {
   type        = string
 }
 
-variable "github_repo" {
-  description = "Github repository name"
+variable "github_hugo_repo" {
+  description = "Hugo GitHub repository name"
+  type        = string
+}
+
+variable "github_startpage_repo" {
+  description = "Startpage GitHub repository name"
+  type        = string
+}
+
+
+variable "hugo_subdomain_name" {
+  description = "Hugo subdomain name"
+  type        = string
+}
+
+variable "startpage_subdomain_name" {
+  description = "Startpage subdomain name"
   type        = string
 }
 
@@ -25,13 +46,23 @@ variable "git_oidc_thumbprint_list" {
 }
 
 # Storage details
-variable "hugo_s3_bucket_arn" {
-  description = "ARN value of the hugo s3 bucket from storage module"
+variable "hugo_bucket_arn" {
+  description = "ARN value of the Hugo S3 bucket"
+  type        = string
+}
+
+variable "startpage_bucket_arn" {
+  description = "ARN value of the Startpage S3 bucket"
   type        = string
 }
 
 # Network details
-variable "cloudfront_distribution_arn" {
-  description = "Cloudfront Distribution ARN from the network module"
+variable "hugo_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo cloudfront distribution"
+  type        = string
+}
+
+variable "startpage_cloudfront_dist_arn" {
+  description = "ARN value of the Startpage cloudfront distribution"
   type        = string
 }

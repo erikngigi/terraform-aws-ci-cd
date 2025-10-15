@@ -15,7 +15,3 @@ output "cloudflare_dns_records" {
     if z.name != var.domain_name
   ]
 }
-
-output "cloudflare_hugo_url" {
-  value = cloudflare_dns_record.hugo_site.name
-}

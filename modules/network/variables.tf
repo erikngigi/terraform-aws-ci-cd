@@ -1,10 +1,30 @@
-variable "s3_bucket_name" {
-  description = "Name of the s3 hugo bucket"
+variable "hugo_name" {
+  description = "Name of the Hugo website for resource tagging"
   type        = string
 }
 
-variable "s3_bucket_regional_domain_name" {
-  description = "Domain name of the s3 hugo bucket"
+variable "startpage_name" {
+  description = "Name of the Startpage website for resource tagging"
+  type        = string
+}
+
+variable "hugo_bucket_id" {
+  description = "ID value of the Hugo S3 bucket (storage module)"
+  type        = string
+}
+
+variable "startpage_bucket_id" {
+  description = "ID value of the Startpage S3 bucket (storage module)"
+  type        = string
+}
+
+variable "hugo_bucket_domain_name" {
+  description = "Bucket domain name of the Hugo S3 bucket (storage module)"
+  type        = string
+}
+
+variable "startpage_bucket_domain_name" {
+  description = "Bucket domain name of the Startpage S3 bucket (storage module)"
   type        = string
 }
 
@@ -13,7 +33,12 @@ variable "domain_name" {
   type        = string
 }
 
-variable "subdomain_name" {
-  description = "Subdomain name"
+variable "hugo_subdomain_name" {
+  description = "Hugo subdomain name"
+  type        = string
+}
+
+variable "startpage_subdomain_name" {
+  description = "Startpage subdomain name"
   type        = string
 }
