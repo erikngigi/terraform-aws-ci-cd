@@ -19,13 +19,12 @@ module "security" {
   source                        = "./modules/security"
   hugo_name                     = var.hugo_name
   startpage_name                = var.startpage_name
-  git_oidc_url                  = var.git_oidc_url
+  github_oidc_url               = var.github_oidc_url
   github_org                    = var.github_org
   github_hugo_repo              = var.github_hugo_repo
   github_startpage_repo         = var.github_startpage_repo
   hugo_subdomain_name           = var.hugo_subdomain_name
   startpage_subdomain_name      = var.startpage_subdomain_name
-  git_oidc_thumbprint_list      = var.git_oidc_thumbprint_list
   hugo_bucket_arn               = module.storage.hugo_bucket_arn
   startpage_bucket_arn          = module.storage.startpage_bucket_arn
   hugo_cloudfront_dist_arn      = module.network.hugo_cloudfront_dist_arn

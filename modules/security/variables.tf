@@ -35,14 +35,9 @@ variable "startpage_subdomain_name" {
 }
 
 # Security details
-variable "git_oidc_url" {
+variable "github_oidc_url" {
   description = "GitHub actions OIDC url"
   type        = string
-}
-
-variable "git_oidc_thumbprint_list" {
-  description = "List of thumbprints for the GitHub OIDC provider"
-  type        = list(string)
 }
 
 # Storage details
