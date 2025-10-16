@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "hugo_site" {
 }
 
 resource "aws_s3_bucket" "startpage_site" {
-  bucket = "${var.startpage_name}-s3-bucket"
+  bucket        = "${var.startpage_name}-s3-bucket"
   force_destroy = true
 
   tags = {
