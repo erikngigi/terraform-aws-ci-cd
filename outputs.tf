@@ -42,7 +42,7 @@ output "startpage_cloudfront_dist_id" {
   value       = module.network.startpage_cloudfront_dist_id
 }
 
-# output "cloudfront_url" {
-#   description = "CloudFront distribution URL (HTTPS)"
-#   value       = "https://${module.network.cloudfront_domain_name}"
-# }
+output "cloudfront_url" {
+  description = "CloudFront distribution URL (HTTPS)"
+  value       = module.network.hugo_cloudfront_domain_name
+}

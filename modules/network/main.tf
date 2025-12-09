@@ -32,9 +32,10 @@ resource "aws_cloudfront_function" "startpage_url_rewrite" {
 }
 
 resource "aws_acm_certificate" "hugo_site" {
-  domain_name       = "${var.hugo_subdomain_name}.${var.domain_name}"
-  validation_method = "DNS"
-  key_algorithm     = "EC_prime256v1"
+  domain_name               = var.domain_name
+  subject_alternative_names = ["${var.hugo_www_subdomain_name}.${var.domain_name}"]
+  validation_method         = "DNS"
+  key_algorithm             = "EC_prime256v1"
 
   options {
     certificate_transparency_logging_preference = "ENABLED"
@@ -75,7 +76,10 @@ resource "aws_cloudfront_distribution" "hugo_site" {
   comment             = "Hugo website distribution"
   http_version        = "http2and3"
 
-  aliases = ["${var.hugo_subdomain_name}.${var.domain_name}"]
+  aliases = [
+    var.domain_name,
+    "${var.hugo_www_subdomain_name}.${var.domain_name}"
+  ]
 
   origin {
     domain_name              = var.hugo_bucket_domain_name

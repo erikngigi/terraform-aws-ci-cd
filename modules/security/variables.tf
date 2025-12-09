@@ -23,17 +23,6 @@ variable "github_startpage_repo" {
   type        = string
 }
 
-
-variable "hugo_subdomain_name" {
-  description = "Hugo subdomain name"
-  type        = string
-}
-
-variable "startpage_subdomain_name" {
-  description = "Startpage subdomain name"
-  type        = string
-}
-
 # Security details
 variable "github_oidc_url" {
   description = "GitHub actions OIDC url"

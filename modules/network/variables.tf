@@ -34,7 +34,12 @@ variable "domain_name" {
 }
 
 variable "hugo_subdomain_name" {
-  description = "Hugo subdomain name"
+  description = "Subdomain for Hugo site (empty string for root domain)"
+  type        = string
+}
+
+variable "hugo_www_subdomain_name" {
+  description = "WWW subdomain for Hugo site"
   type        = string
 }
 
