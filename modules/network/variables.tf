@@ -8,8 +8,13 @@ variable "startpage_name" {
   type        = string
 }
 
-variable "hugo_bucket_id" {
-  description = "ID value of the Hugo S3 bucket (storage module)"
+variable "hugo_bucket_prod_id" {
+  description = "ID value of the Hugo production S3 bucket (storage module)"
+  type        = string
+}
+
+variable "hugo_bucket_dev_id" {
+  description = "ID value of the Hugo development S3 bucket (storage module)"
   type        = string
 }
 
@@ -18,8 +23,13 @@ variable "startpage_bucket_id" {
   type        = string
 }
 
-variable "hugo_bucket_domain_name" {
-  description = "Bucket domain name of the Hugo S3 bucket (storage module)"
+variable "hugo_bucket_prod_domain_name" {
+  description = "S3 bucket domain name for Hugo production site (storage module)"
+  type        = string
+}
+
+variable "hugo_bucket_dev_domain_name" {
+  description = "S3 bucket domain name for Hugo development site (storage module)"
   type        = string
 }
 
@@ -33,13 +43,13 @@ variable "domain_name" {
   type        = string
 }
 
-variable "hugo_subdomain_name" {
-  description = "Subdomain for Hugo site (empty string for root domain)"
+variable "hugo_prod_domain_name" {
+  description = "Production domain name for Hugo webiste"
   type        = string
 }
 
-variable "hugo_www_subdomain_name" {
-  description = "WWW subdomain for Hugo site"
+variable "hugo_dev_domain_name" {
+  description = "Development domain name for Hugo website"
   type        = string
 }
 

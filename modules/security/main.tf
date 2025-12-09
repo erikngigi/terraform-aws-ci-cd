@@ -50,8 +50,10 @@ resource "aws_iam_role_policy" "github_actions" {
           "s3:ListBucket"
         ]
         Resource = [
-          var.hugo_bucket_arn,
-          "${var.hugo_bucket_arn}/*",
+          var.hugo_prod_bucket_arn,
+          var.hugo_dev_bucket_arn,
+          "${var.hugo_prod_bucket_arn}/*",
+          "${var.hugo_dev_bucket_arn}/*",
           var.startpage_bucket_arn,
           "${var.startpage_bucket_arn}/*"
         ]
@@ -64,7 +66,8 @@ resource "aws_iam_role_policy" "github_actions" {
           "cloudfront:ListInvalidations"
         ]
         Resource = [
-          var.hugo_cloudfront_dist_arn,
+          var.hugo_prod_cloudfront_dist_arn,
+          var.hugo_dev_cloudfront_dist_arn,
           var.startpage_cloudfront_dist_arn
         ]
       }

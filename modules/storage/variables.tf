@@ -8,8 +8,13 @@ variable "startpage_name" {
   type        = string
 }
 
-variable "hugo_cloudfront_dist_arn" {
-  description = "ARN value of the Hugo cloudfront distribution"
+variable "hugo_prod_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo production cloudfront distribution"
+  type        = string
+}
+
+variable "hugo_dev_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo development cloudfront distribution"
   type        = string
 }
 

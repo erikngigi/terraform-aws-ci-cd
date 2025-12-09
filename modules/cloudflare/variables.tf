@@ -13,13 +13,13 @@ variable "domain_name" {
   type        = string
 }
 
-variable "hugo_subdomain_name" {
-  description = "Subdomain for Hugo site (empty string for root domain)"
+variable "hugo_prod_domain_name" {
+  description = "Production domain name for Hugo webiste"
   type        = string
 }
 
-variable "hugo_www_subdomain_name" {
-  description = "WWW subdomain for Hugo site"
+variable "hugo_dev_domain_name" {
+  description = "Development domain name for Hugo website"
   type        = string
 }
 
@@ -28,8 +28,13 @@ variable "startpage_subdomain_name" {
   type        = string
 }
 
-variable "hugo_cloudfront_domain_name" {
-  description = "Name value of the Hugo cloudfront distribution"
+variable "hugo_prod_cloudfront_domain_name" {
+  description = "Name value of the Hugo production cloudfront distribution"
+  type        = string
+}
+
+variable "hugo_dev_cloudfront_domain_name" {
+  description = "Name value of the Hugo development cloudfront distribution"
   type        = string
 }
 
@@ -38,8 +43,17 @@ variable "startpage_cloudfront_domain_name" {
   type        = string
 }
 
-variable "hugo_acm_validation_options" {
-  description = "ACM certificate validation DNS records for Hugo"
+variable "hugo_prod_acm_validation_options" {
+  description = "ACM certificate validation DNS records for Hugo production"
+  type = list(object({
+    name  = string
+    type  = string
+    value = string
+  }))
+}
+
+variable "hugo_dev_acm_validation_options" {
+  description = "ACM certificate validation DNS records for Hugo development"
   type = list(object({
     name  = string
     type  = string

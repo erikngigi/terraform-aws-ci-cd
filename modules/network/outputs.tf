@@ -1,6 +1,11 @@
-output "hugo_cloudfront_dist_arn" {
-  description = "ARN value of the Hugo cloudfront distribution"
-  value       = aws_cloudfront_distribution.hugo_site.arn
+output "hugo_prod_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo production cloudfront distribution"
+  value       = aws_cloudfront_distribution.hugo_prod_site.arn
+}
+
+output "hugo_dev_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo development cloudfront distribution"
+  value       = aws_cloudfront_distribution.hugo_dev_site.arn
 }
 
 output "startpage_cloudfront_dist_arn" {
@@ -8,9 +13,14 @@ output "startpage_cloudfront_dist_arn" {
   value       = aws_cloudfront_distribution.startpage_site.arn
 }
 
-output "hugo_cloudfront_dist_id" {
-  description = "ID value of the Hugo cloudfront distribution"
-  value       = aws_cloudfront_distribution.hugo_site.id
+output "hugo_prod_cloudfront_dist_id" {
+  description = "ID value of the Hugo production cloudfront distribution"
+  value       = aws_cloudfront_distribution.hugo_prod_site.id
+}
+
+output "hugo_dev_cloudfront_dist_id" {
+  description = "ID value of the Hugo development cloudfront distribution"
+  value       = aws_cloudfront_distribution.hugo_dev_site.id
 }
 
 output "startpage_cloudfront_dist_id" {
@@ -18,9 +28,14 @@ output "startpage_cloudfront_dist_id" {
   value       = aws_cloudfront_distribution.startpage_site.id
 }
 
-output "hugo_cloudfront_domain_name" {
-  description = "Name value of the Hugo cloudfront distribution"
-  value       = aws_cloudfront_distribution.hugo_site.domain_name
+output "hugo_prod_cloudfront_domain_name" {
+  description = "Name value of the Hugo production cloudfront distribution"
+  value       = aws_cloudfront_distribution.hugo_prod_site.domain_name
+}
+
+output "hugo_dev_cloudfront_domain_name" {
+  description = "Name of the Hugo development cloudfront distribution"
+  value       = aws_cloudfront_distribution.hugo_dev_site.domain_name
 }
 
 output "startpage_cloudfront_domain_name" {
@@ -28,10 +43,21 @@ output "startpage_cloudfront_domain_name" {
   value       = aws_cloudfront_distribution.startpage_site.domain_name
 }
 
-output "hugo_acm_validation_options" {
-  description = "ACM certificate validation DNS records for Hugo"
+output "hugo_prod_acm_validation_options" {
+  description = "ACM certificate validation DNS records for Hugo production site"
   value = [
-    for dvo in aws_acm_certificate.hugo_site.domain_validation_options : {
+    for dvo in aws_acm_certificate.hugo_prod_site.domain_validation_options : {
+      name  = dvo.resource_record_name
+      type  = dvo.resource_record_type
+      value = dvo.resource_record_value
+    }
+  ]
+}
+
+output "hugo_dev_acm_validation_options" {
+  description = "ACM certificate validation DNS records for Hugo development site"
+  value = [
+    for dvo in aws_acm_certificate.hugo_dev_site.domain_validation_options : {
       name  = dvo.resource_record_name
       type  = dvo.resource_record_type
       value = dvo.resource_record_value

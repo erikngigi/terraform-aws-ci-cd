@@ -31,13 +31,13 @@ variable "domain_name" {
   type        = string
 }
 
-variable "hugo_subdomain_name" {
-  description = "Subdomain for Hugo site (empty string for root domain)"
+variable "hugo_prod_domain_name" {
+  description = "Production domain name for Hugo webiste"
   type        = string
 }
 
-variable "hugo_www_subdomain_name" {
-  description = "WWW subdomain for Hugo site"
+variable "hugo_dev_domain_name" {
+  description = "Development domain name for Hugo website"
   type        = string
 }
 

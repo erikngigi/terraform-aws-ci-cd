@@ -30,8 +30,13 @@ variable "github_oidc_url" {
 }
 
 # Storage details
-variable "hugo_bucket_arn" {
-  description = "ARN value of the Hugo S3 bucket"
+variable "hugo_prod_bucket_arn" {
+  description = "ARN value of the Hugo production S3 bucket"
+  type        = string
+}
+
+variable "hugo_dev_bucket_arn" {
+  description = "ARN value of the Hugo development S3 bucket"
   type        = string
 }
 
@@ -41,8 +46,13 @@ variable "startpage_bucket_arn" {
 }
 
 # Network details
-variable "hugo_cloudfront_dist_arn" {
-  description = "ARN value of the Hugo cloudfront distribution"
+variable "hugo_prod_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo production cloudfront distribution"
+  type        = string
+}
+
+variable "hugo_dev_cloudfront_dist_arn" {
+  description = "ARN value of the Hugo development cloudfront distribution"
   type        = string
 }
 
