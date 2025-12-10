@@ -20,3 +20,15 @@ provider "aws" {
 
 # Configure the Cloudflare provider
 provider "cloudflare" {}
+
+# Terraform statefile bucket storage 
+terraform {
+  backend "s3" {
+    bucket       = "ericngigi-terraform-states"
+    key          = "multi-static-sites/dev/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
+    profile      = "ericngigi"
+  }
+}
