@@ -52,3 +52,7 @@ output "hugo_prod_cloudfront_url" {
 output "hugo_dev_cloudfront_url" {
   value = module.network.hugo_dev_cloudfront_domain_name
 }
+
+output "startpage_cloudfront_url" {
+  value = module.network.startpage_cloudfront_domain_name
+}
