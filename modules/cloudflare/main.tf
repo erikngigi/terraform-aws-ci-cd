@@ -51,32 +51,32 @@ resource "cloudflare_dns_record" "startpage_acm_validation" {
 resource "cloudflare_dns_record" "hugo_prod_site" {
   zone_id    = data.cloudflare_zones.zone.result[0].id
   name       = var.hugo_prod_domain_name
-  ttl        = 1
+  ttl        = 60
   type       = "CNAME"
   content    = var.hugo_prod_cloudfront_domain_name
-  proxied    = true
-  comment    = "Hugo production website on CloudFront with Cloudflare SSL"
+  proxied    = false
+  comment    = "Hugo production website on CloudFront"
   depends_on = [cloudflare_dns_record.hugo_prod_acm_validation]
 }
 
 resource "cloudflare_dns_record" "hugo_dev_site" {
   zone_id    = data.cloudflare_zones.zone.result[0].id
   name       = var.hugo_dev_domain_name
-  ttl        = 1
+  ttl        = 60
   type       = "CNAME"
   content    = var.hugo_dev_cloudfront_domain_name
-  proxied    = true
-  comment    = "Hugo development website on CloudFront with Cloudflare SSL"
+  proxied    = false
+  comment    = "Hugo development website on CloudFront"
   depends_on = [cloudflare_dns_record.hugo_dev_acm_validation]
 }
 
 resource "cloudflare_dns_record" "startpage_site" {
   zone_id    = data.cloudflare_zones.zone.result[0].id
   name       = var.startpage_subdomain_name
-  ttl        = 1
+  ttl        = 60
   type       = "CNAME"
   content    = var.startpage_cloudfront_domain_name
-  proxied    = true
-  comment    = "Startpage website on CloudFront with Cloudflare SSL"
+  proxied    = false
+  comment    = "Startpage website on CloudFront"
   depends_on = [cloudflare_dns_record.startpage_acm_validation]
 }
