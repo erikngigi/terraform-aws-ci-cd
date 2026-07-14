@@ -41,8 +41,13 @@ variable "hugo_dev_domain_name" {
   type        = string
 }
 
-variable "startpage_subdomain_name" {
-  description = "Startpage subdomain name"
+variable "startpage_prod_domain_name" {
+  description = "Production domain name for static startpage"
+  type        = string
+}
+
+variable "startpage_dev_domain_name" {
+  description = "Development domain name for static startpage"
   type        = string
 }
 

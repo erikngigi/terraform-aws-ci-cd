@@ -18,7 +18,12 @@ variable "hugo_dev_cloudfront_dist_arn" {
   type        = string
 }
 
-variable "startpage_cloudfront_dist_arn" {
-  description = "ARN value of the Startpage cloudfront distribution"
+variable "startpage_prod_cloudfront_dist_arn" {
+  description = "ARN value of the production startpage cloudfront distribution"
+  type        = string
+}
+
+variable "startpage_dev_cloudfront_dist_arn" {
+  description = "ARN value of the development startpage cloudfront distribution"
   type        = string
 }

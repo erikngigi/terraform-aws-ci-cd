@@ -18,8 +18,13 @@ variable "hugo_bucket_dev_id" {
   type        = string
 }
 
-variable "startpage_bucket_id" {
-  description = "ID value of the Startpage S3 bucket (storage module)"
+variable "startpage_bucket_prod_id" {
+  description = "ID value of the Startpage production S3 bucket (storage module)"
+  type        = string
+}
+
+variable "startpage_bucket_dev_id" {
+  description = "ID value of the Startpage development S3 bucket (storage module)"
   type        = string
 }
 
@@ -33,8 +38,13 @@ variable "hugo_bucket_dev_domain_name" {
   type        = string
 }
 
-variable "startpage_bucket_domain_name" {
-  description = "Bucket domain name of the Startpage S3 bucket (storage module)"
+variable "startpage_bucket_prod_domain_name" {
+  description = "S3 bucket domain name of the static development startpage (storage module)"
+  type        = string
+}
+
+variable "startpage_bucket_dev_domain_name" {
+  description = "S3 bucket domain name of the static production startpage (storage module)"
   type        = string
 }
 
@@ -53,7 +63,12 @@ variable "hugo_dev_domain_name" {
   type        = string
 }
 
-variable "startpage_subdomain_name" {
-  description = "Startpage subdomain name"
+variable "startpage_prod_domain_name" {
+  description = "Production domain name for static startpage"
+  type        = string
+}
+
+variable "startpage_dev_domain_name" {
+  description = "Development domain name for static startpage"
   type        = string
 }

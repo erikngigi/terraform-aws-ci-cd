@@ -54,8 +54,10 @@ resource "aws_iam_role_policy" "github_actions" {
           var.hugo_dev_bucket_arn,
           "${var.hugo_prod_bucket_arn}/*",
           "${var.hugo_dev_bucket_arn}/*",
-          var.startpage_bucket_arn,
-          "${var.startpage_bucket_arn}/*"
+          var.startpage_prod_bucket_arn,
+          var.startpage_dev_bucket_arn,
+          "${var.startpage_prod_bucket_arn}/*",
+          "${var.startpage_dev_bucket_arn}/*"
         ]
       },
       {
@@ -68,7 +70,8 @@ resource "aws_iam_role_policy" "github_actions" {
         Resource = [
           var.hugo_prod_cloudfront_dist_arn,
           var.hugo_dev_cloudfront_dist_arn,
-          var.startpage_cloudfront_dist_arn
+          var.startpage_prod_cloudfront_dist_arn,
+          var.startpage_dev_cloudfront_dist_arn
         ]
       }
     ]

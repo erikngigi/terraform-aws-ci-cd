@@ -23,8 +23,13 @@ variable "hugo_dev_domain_name" {
   type        = string
 }
 
-variable "startpage_subdomain_name" {
-  description = "Startpage subdomain name"
+variable "startpage_prod_domain_name" {
+  description = "Production domain name for the startpage"
+  type        = string
+}
+
+variable "startpage_dev_domain_name" {
+  description = "Development domain name for the startpage"
   type        = string
 }
 
@@ -38,8 +43,13 @@ variable "hugo_dev_cloudfront_domain_name" {
   type        = string
 }
 
-variable "startpage_cloudfront_domain_name" {
-  description = "Name value of the Startpage cloudfront distribution"
+variable "startpage_prod_cloudfront_domain_name" {
+  description = "Name value of the startpage production cloudfront distribution"
+  type        = string
+}
+
+variable "startpage_dev_cloudfront_domain_name" {
+  description = "Name value of the startpage development cloudfront distribution"
   type        = string
 }
 
@@ -61,8 +71,17 @@ variable "hugo_dev_acm_validation_options" {
   }))
 }
 
-variable "startpage_acm_validation_options" {
-  description = "ACM certificate validation DNS records for Startpage"
+variable "startpage_prod_acm_validation_options" {
+  description = "ACM certificate validation DNS records for the production startpage"
+  type = list(object({
+    name  = string
+    type  = string
+    value = string
+  }))
+}
+
+variable "startpage_dev_acm_validation_options" {
+  description = "ACM certificate validation DNS records for the development startpage"
   type = list(object({
     name  = string
     type  = string

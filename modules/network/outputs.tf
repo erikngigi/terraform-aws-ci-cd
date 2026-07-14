@@ -8,9 +8,14 @@ output "hugo_dev_cloudfront_dist_arn" {
   value       = aws_cloudfront_distribution.hugo_dev_site.arn
 }
 
-output "startpage_cloudfront_dist_arn" {
-  description = "ARN value of the Startpage cloudfront distribution"
-  value       = aws_cloudfront_distribution.startpage_site.arn
+output "startpage_prod_cloudfront_dist_arn" {
+  description = "ARN value of the Startpage production cloudfront distribution"
+  value       = aws_cloudfront_distribution.startpage_prod_site.arn
+}
+
+output "startpage_dev_cloudfront_dist_arn" {
+  description = "ARN value of the Startpage development cloudfront distribution"
+  value       = aws_cloudfront_distribution.startpage_dev_site.arn
 }
 
 output "hugo_prod_cloudfront_dist_id" {
@@ -23,9 +28,14 @@ output "hugo_dev_cloudfront_dist_id" {
   value       = aws_cloudfront_distribution.hugo_dev_site.id
 }
 
-output "startpage_cloudfront_dist_id" {
-  description = "ID value of the Startpage cloudfront distribution"
-  value       = aws_cloudfront_distribution.startpage_site.id
+output "startpage_prod_cloudfront_dist_id" {
+  description = "ID value of the Startpage proudction cloudfront distribution"
+  value       = aws_cloudfront_distribution.startpage_prod_site.id
+}
+
+output "startpage_dev_cloudfront_dist_id" {
+  description = "ID value of the Startpage development cloudfront distribution"
+  value       = aws_cloudfront_distribution.startpage_dev_site.id
 }
 
 output "hugo_prod_cloudfront_domain_name" {
@@ -38,9 +48,14 @@ output "hugo_dev_cloudfront_domain_name" {
   value       = aws_cloudfront_distribution.hugo_dev_site.domain_name
 }
 
-output "startpage_cloudfront_domain_name" {
-  description = "Name value of the Startpage cloudfront distribution"
-  value       = aws_cloudfront_distribution.startpage_site.domain_name
+output "startpage_prod_cloudfront_domain_name" {
+  description = "Name value of the startpage production cloudfront distribution"
+  value       = aws_cloudfront_distribution.startpage_prod_site.domain_name
+}
+
+output "startpage_dev_cloudfront_domain_name" {
+  description = "Name value of the startpage development cloudfront distribution"
+  value       = aws_cloudfront_distribution.startpage_dev_site.domain_name
 }
 
 output "hugo_prod_acm_validation_options" {
@@ -65,10 +80,21 @@ output "hugo_dev_acm_validation_options" {
   ]
 }
 
-output "startpage_acm_validation_options" {
-  description = "ACM certificate validation DNS records for Startpage"
+output "startpage_prod_acm_validation_options" {
+  description = "ACM certificate validation DNS records for the production startpage"
   value = [
-    for dvo in aws_acm_certificate.startpage_site.domain_validation_options : {
+    for dvo in aws_acm_certificate.startpage_prod_site.domain_validation_options : {
+      name  = dvo.resource_record_name
+      type  = dvo.resource_record_type
+      value = dvo.resource_record_value
+    }
+  ]
+}
+
+output "startpage_dev_acm_validation_options" {
+  description = "ACM certificate validation DNS records for the development startpage"
+  value = [
+    for dvo in aws_acm_certificate.startpage_dev_site.domain_validation_options : {
       name  = dvo.resource_record_name
       type  = dvo.resource_record_type
       value = dvo.resource_record_value

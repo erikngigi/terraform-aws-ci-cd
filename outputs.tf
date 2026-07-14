@@ -10,8 +10,12 @@ output "hugo_dev_bucket_id" {
   value = module.storage.hugo_dev_bucket_id
 }
 
-output "startpage_bucket_id" {
-  value = module.storage.startpage_bucket_id
+output "startpage_prod_bucket_id" {
+  value = module.storage.startpage_prod_bucket_id
+}
+
+output "startpage_dev_bucket_id" {
+  value = module.storage.startpage_dev_bucket_id
 }
 
 # output "cloudflare_zone_names" {
@@ -41,8 +45,12 @@ output "hugo_dev_cloudfront_dist_id" {
   value = module.network.hugo_dev_cloudfront_dist_id
 }
 
-output "startpage_cloudfront_dist_id" {
-  value = module.network.startpage_cloudfront_dist_id
+output "startpage_prod_cloudfront_dist_id" {
+  value = module.network.startpage_prod_cloudfront_dist_id
+}
+
+output "startpage_dev_cloudfront_dist_id" {
+  value = module.network.startpage_dev_cloudfront_dist_id
 }
 
 output "hugo_prod_cloudfront_url" {
@@ -53,6 +61,10 @@ output "hugo_dev_cloudfront_url" {
   value = module.network.hugo_dev_cloudfront_domain_name
 }
 
-output "startpage_cloudfront_url" {
-  value = module.network.startpage_cloudfront_domain_name
+output "startpage_prod_cloudfront_url" {
+  value = module.network.startpage_prod_cloudfront_domain_name
+}
+
+output "startpage_dev_cloudfront_url" {
+  value = module.network.startpage_dev_cloudfront_domain_name
 }

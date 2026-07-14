@@ -40,8 +40,13 @@ variable "hugo_dev_bucket_arn" {
   type        = string
 }
 
-variable "startpage_bucket_arn" {
-  description = "ARN value of the Startpage S3 bucket"
+variable "startpage_prod_bucket_arn" {
+  description = "ARN value of the startpage production S3 bucket"
+  type        = string
+}
+
+variable "startpage_dev_bucket_arn" {
+  description = "ARN value of the startpage development S3 bucket"
   type        = string
 }
 
@@ -56,7 +61,12 @@ variable "hugo_dev_cloudfront_dist_arn" {
   type        = string
 }
 
-variable "startpage_cloudfront_dist_arn" {
-  description = "ARN value of the Startpage cloudfront distribution"
+variable "startpage_prod_cloudfront_dist_arn" {
+  description = "ARN value of the startpage production cloudfront distribution"
+  type        = string
+}
+
+variable "startpage_dev_cloudfront_dist_arn" {
+  description = "ARN value of the startpage development cloudfront distribution"
   type        = string
 }
